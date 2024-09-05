@@ -11,6 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_KEY, BASE_URL } from "../constants";
 
 ChartJS.register(
   LineElement,
@@ -21,9 +22,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-const API_KEY = "HD4VDRQXBH5KK2ZM";
-const BASE_URL = "https://www.alphavantage.co/query";
 
 interface StockData {
   symbol: string;

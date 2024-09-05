@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
 import { useNavigate } from "react-router-dom";
+import { API_KEY, BASE_URL } from "../constants";
 
 interface Stock {
   symbol: string;
@@ -34,7 +35,7 @@ const StockList: React.FC = () => {
     const fetchStockData = async () => {
       try {
         const response = await fetch(
-          "https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=HD4VDRQXBH5KK2ZM"
+          `${BASE_URL}?function=LISTING_STATUS&apikey=${API_KEY}`
         );
         const csvData = await response.text();
 
